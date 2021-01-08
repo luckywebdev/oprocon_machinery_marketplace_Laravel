@@ -1,0 +1,31 @@
+.header {
+    position: relative;
+    z-index: 99;
+    height: rem(65px);
+    background-color: $gray-600;
+
+    @include media-breakpoint-up(lg) {
+        height: rem(75px);
+    }
+
+    &--fixedtop {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: rem(65px);
+        z-index: 99999;
+        background: $gray-750;
+
+        @include media-breakpoint-up(lg) {
+            height: rem(60px);
+        }
+
+        &+main.content {
+            padding-top: rem(65px);
+
+            @include media-breakpoint-up(lg) {
+                padding-top: rem(60px);
+            }
+        }
+    }
+}

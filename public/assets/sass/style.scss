@@ -1,0 +1,40 @@
+// rem
+@import 'vendors/rem';
+
+@import 'abstracts/_variables';
+@import 'abstracts/_mixins';
+@import 'vendors/bootstrap';
+
+//bootstrap
+@import 'node_modules/bootstrap/scss/bootstrap';
+
+//font awesome
+@import 'node_modules/font-awesome/scss/font-awesome';
+
+//base
+@import 'base/base';
+@import 'base/typography';
+
+/* components */
+@import 'components/header';
+@import 'components/nav-primary';
+@import 'components/nav-secondary';
+@import 'components/popup';
+@import 'components/buttons';
+@import 'components/form';
+@import 'components/carousel';
+@import 'components/sidebar';
+@import 'components/country-select';
+@import 'components/footer';
+
+//sections
+@import 'sections/banner';
+@import 'sections/section-title';
+
+//layout
+@import 'layouts/layout-admin';
+
+//pages
+@import 'pages/home';
+@import './pages/categories';
+@import './pages/accounts';

@@ -1,0 +1,35 @@
+.section-title {
+    margin-bottom: rem(30px);
+    text-align: center;
+
+    @include media-breakpoint-up(lg) {
+        margin-bottom: rem(40px);
+    }
+
+    h2 {
+        position: relative;
+        padding-bottom: rem(17px);
+
+        @include media-breakpoint-down(md) {
+            padding-bottom: rem(20px);
+            font-size: rem(18px);
+        }
+
+        &::after {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            height: rem(6px);
+            width: rem(100px);
+            background-color: $gray-600;
+            content: '';
+        }
+    }
+
+    &--white {
+        h2::after {
+            background-color: $white;
+        }
+    }
+}

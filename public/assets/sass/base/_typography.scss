@@ -1,0 +1,41 @@
+body {
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+
+  @include media-breakpoint-only(md) {
+    @include text(rem(12px), 1.17);
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: inherit;
+  font-weight: 700;
+}
+
+h1 {
+  @include text(rem(40px), 1.175, null, 900);
+}
+
+h2 {
+  @include text(rem(18px), .85, null, 700);
+  text-transform: uppercase;
+
+  @include media-breakpoint-up(lg) {
+    @include text(rem(24px), 1.25);
+  }
+}
+
+h5 {
+  font-size: 1rem;
+}
+
+h6 {
+  @include text(rem(15px), 1.14);
+}

@@ -1,0 +1,20 @@
+.swiper-pagination {
+    margin-top: rem(38px);
+    text-align: center;
+
+    .swiper-pagination-bullet {
+        display: inline-block;
+        margin: rem(0 4px);
+        width: rem(12px);
+        height: rem(12px);
+        background-color: $gray-400;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: all .3s ease;
+
+        &-active {
+            background-color: $blue;
+        }
+    }
+
+}

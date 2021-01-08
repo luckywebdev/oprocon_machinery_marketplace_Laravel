@@ -1,0 +1,166 @@
+.btn {
+
+    &-white {
+        background-color: $white;
+    }
+
+    &-primary {
+        @include hover {
+            background-color: #1877C8;
+        }
+    }
+
+    &--banner {
+        height: rem(65px);
+        text-align: left;
+        text-transform: uppercase;
+        padding: rem(15px 20px);
+
+        @include media(375px) {
+            padding: rem(11px 20px 11px 44px);
+        }
+
+        @include media-breakpoint-up(md) {
+            padding: rem(5.5px 10px 5.5px 20px);
+            height: rem(42px)
+        }
+
+        @include media-breakpoint-up(lg) {
+            padding: rem(11px 15px 11px 30px);
+            height: rem(65px);
+        }
+
+        strong {
+            @include text(rem(16px), 1.2);
+
+            @include media(375px, 768px) {
+                @include text(rem(20px), 1.2);
+            }
+
+            @include media-breakpoint-only(md) {
+                @include text(rem(12px), 1.6);
+            }
+
+        }
+
+        &.btn-primary {
+            box-shadow: rem(0 4px 0) $blue-900;
+
+            &:hover {
+                background-color: $blue;
+            }
+        }
+
+        &.btn-white {
+            box-shadow: rem(0 4px 0) $gray-300;
+
+            &:active,
+            &:focus {
+                box-shadow: 0 0 0;
+            }
+        }
+    }
+
+    &-icon {
+        svg {
+            margin-right: rem(10px);
+        }
+    }
+
+    &-upload {
+        @include text(15px, 21px, $primary);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: rem(40px);
+        padding: rem(5px 15px);
+        border: 2px solid $primary;
+        border-radius: rem(6px);
+        background: transparent;
+    }
+
+    &__icon {
+        display: block;
+        background-repeat: no-repeat;
+        background-position: left center;
+        background-size: rem(47px 35px);
+
+        @include media(null, 325px) {
+            @include text(rem(12px), 1.2);
+        }
+
+        @include media-breakpoint-only(md) {
+            @include text(rem(10px), 1.2);
+        }
+
+        &--handshake {
+            padding-left: rem(69px);
+            background-image: url(../svgs/hand-shake.svg);
+
+            @include media-breakpoint-only(md) {
+                padding-left: rem(43px);
+                background-size: 30px 22px;
+            }
+        }
+
+        &--cart {
+            padding-left: rem(57px);
+            background-image: url(../svgs/cart.svg);
+            background-size: rem(35px);
+
+            @include media-breakpoint-only(md) {
+                padding-left: rem(38px);
+                background-size: rem(22px);
+            }
+        }
+    }
+
+    &--popup {
+        @include text(rem(20px), 1.7, null, bold);
+        height: rem(60px);
+        border-radius: rem(2px);
+    }
+}
+
+
+.controller {
+    &__nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 99;
+        border: 0;
+        padding: 0;
+        width: rem(50px);
+        height: rem(50px);
+        border-radius: 50%;
+        background-color: $gray-400;
+        transition: all .3s ease;
+
+        &:hover,
+        &:active,
+        &:focus {
+            background-color: $blue;
+            border: 0;
+            outline: 0;
+        }
+
+        &--prev {
+            left: rem(-70px);
+        }
+
+        &--next {
+            right: rem(-70px);
+        }
+    }
+}
+
+.caret {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-top: 4px dashed;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+}

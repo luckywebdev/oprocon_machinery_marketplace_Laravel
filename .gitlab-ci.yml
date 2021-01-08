@@ -1,0 +1,16 @@
+before_script:
+  - echo "Before script"
+  - cd /var/www/html/laravel_machinery_master/current
+building:
+  stage: build
+  script:
+    - sudo ~/.composer/vendor/bin/envoy run deploy
+testing:
+  stage: test
+  script:
+    - echo "Unit Tests"
+    - sudo vendor/bin/phpunit
+deploying:
+  stage: deploy
+  script:
+    - echo "Deployed"

@@ -1,0 +1,107 @@
+html,
+body {
+    min-height: 100vh;
+}
+
+body {
+    @include media-breakpoint-down(md) {
+        overflow-x: hidden;
+    }
+}
+
+.main-wrap {
+    overflow: hidden;
+}
+
+a {
+    display: inline-block;
+
+    &:active,
+    &:focus {
+        outline: 0;
+    }
+
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+img {
+    max-width: 100%;
+    width: auto;
+    height: auto;
+}
+
+p {
+    margin-bottom: 0;
+}
+
+ol,
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+button {
+
+    &:focus,
+    &:active {
+        outline: 0;
+        box-shadow: 0 0 0;
+    }
+}
+
+figure {
+    margin-bottom: 0;
+}
+
+.link {
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.container {
+    @media screen and (max-width: 1140px) {
+        padding-left: 21px;
+        padding-right: 21px;
+        max-width: 1140px;
+    }
+}
+
+.dropdown-toggle {
+    border: 0 !important;
+}
+
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.carousel-indicators {
+    position: relative;
+    top: auto;
+    right: auto;
+    left: auto;
+    bottom: auto;
+    margin-top: rem(30px);
+
+
+    &--industries {
+        @include media-breakpoint-up(md) {
+            margin-top: rem(15px);
+        }
+    }
+
+    li {
+        border-radius: 50%;
+        opacity: 1;
+        border: 0;
+
+        &.active {
+            background-color: $blue;
+        }
+    }
+}

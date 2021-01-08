@@ -1,0 +1,308 @@
+select:not(.navbar-search__select) {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+}
+
+//form
+.input-group {
+    &--popup:not(&--submit) {
+        margin-top: rem(38px);
+
+        &:first-child {
+            margin-top: rem(30px);
+        }
+    }
+
+    &--remember {
+        margin-top: 1rem;
+        margin-bottom: rem(20px);
+    }
+
+    &--newac,
+    &--security {
+        margin-top: rem(20px);
+
+        .input-security {
+            margin-top: rem(15px);
+            width: 100%;
+        }
+    }
+
+    &--security {
+        &+.input-group--submit {
+            margin-top: rem(38px);
+        }
+    }
+
+    &--submit {
+        margin-top: rem(30px);
+    }
+}
+
+.form-control {
+    @include placeholder($gray-text);
+    width: 100%;
+    height: rem(30px);
+
+    &+& {
+        margin-top: rem(10px);
+    }
+
+    &--bordared {
+        @include placeholder($gray-popup);
+        @include text(rem(18px), null, $gray-popup);
+        padding-left: 0;
+        padding-right: 25px;
+        height: rem(48px);
+        background-color: transparent;
+        border-radius: 0;
+        border: 0;
+        border-bottom: 1px solid $border;
+
+        &:focus,
+        &:active {
+            color: $gray-popup;
+            background-color: transparent;
+            box-shadow: 0 0 0;
+            border-color: $border;
+        }
+    }
+
+    &--user {
+        background: url(../svgs/user-email.svg) no-repeat right center / 17px 15px;
+    }
+
+    &--password {
+        background: url(../svgs/password.svg) no-repeat right center / 17px 15px;
+    }
+
+    &--email {
+        background: url(../svgs/msg.svg) no-repeat right center / 18px 13px;
+    }
+
+    &--security {
+        @include text(rem(20px), 2, #696969, 700, null, $font-family-secondary);
+        margin-right: rem(11px);
+        width: rem(105px);
+        height: rem(40px);
+        background-color: $white;
+        text-align: center;
+        border-radius: rem(2px);
+
+        &-code {
+            display: inline-block;
+            color: #696969 !important;
+            transform: rotate(-5deg);
+        }
+
+        &-input {
+            @include placeholder($gray-popup);
+            @include text(rem(18px), null, $gray-popup);
+            width: calc(100% - 116px);
+            height: rem(40px);
+            background-color: transparent;
+            border: 1px solid $border;
+
+            &:focus,
+            &:active {
+                color: $gray-popup;
+                background-color: transparent;
+                border: 1px solid $border;
+            }
+        }
+    }
+}
+
+select.form-control {
+    padding-top: 0;
+    padding-bottom: 0;
+    background: url(../svgs/select-arrow.svg) no-repeat right 11px center/8px 4px;
+}
+
+.custom-control {
+    line-height: 1rem;
+    min-height: auto;
+
+    &__signup-confirm {
+        margin-top: rem(15px);
+    }
+
+    &-input {
+        &:checked~label::before {
+            background: $blue;
+        }
+    }
+
+    &-label {
+        line-height: 1rem !important;
+
+        &::before {
+            top: 0;
+            background: linear-gradient(180deg, #fcfcfc 0%, #dddddd 100%);
+        }
+
+        &::after {
+            display: none;
+        }
+    }
+}
+
+//checkbox
+.custom-checkbox {
+    .custom-control-label {
+
+        &::after,
+        &::before {
+            width: rem(16px);
+            height: rem(16px);
+        }
+
+        &::after {
+            background-image: none !important;
+        }
+    }
+}
+
+.custom-switch {
+    padding-left: 0;
+    padding-right: $custom-switch-width + $custom-control-gutter;
+    line-height: 24px;
+
+    label:first-child {
+        @include text(rem(14px), 16px, $primary);
+    }
+
+    .custom-control-label {
+        position: absolute;
+        top: 0;
+        right: -$custom-control-gutter;
+
+        &::before {
+            content: '';
+            width: rem(46px);
+            height: rem(24px);
+            border-radius: rem(15px);
+            background: #ccc;
+        }
+
+        &::after {
+            position: absolute;
+            top: 2px;
+            content: '';
+            width: rem(20px);
+            height: rem(20px);
+            background: #fff;
+            border-radius: 50%;
+            display: block;
+        }
+    }
+
+    .custom-control-input:checked~.custom-control-label::after {
+        transform: translateX(1.5rem);
+    }
+}
+
+.custom-radio {
+    padding-bottom: 10px;
+    margin-left: rem(24px);
+
+    .custom-control {
+        &-label {
+            font-size: rem(14px);
+            color: $gray-800;
+
+            &::before {
+                background: linear-gradient(180deg, #fcfcfc 0%, #dddddd 100%);
+                border: 1px solid #bfbfbf;
+                box-sizing: border-box;
+                width: rem(18px);
+                height: rem(18px);
+                margin-top: -2px;
+            }
+
+            &::after {
+                background: #fff;
+            }
+        }
+
+        &-input {
+            &:checked~.custom-control-label {
+                &::before {
+                    background: linear-gradient(180deg,
+                            #fcfcfc 0%,
+                            #dddddd 100%);
+                    border: 1px solid #bfbfbf;
+                    box-sizing: border-box;
+                    width: rem(18px);
+                    height: rem(18px);
+                }
+
+                &::after {
+                    display: inline-block !important;
+                    width: 0.5rem;
+                    height: 0.5rem;
+                    background: #666;
+                    top: 50%;
+                    margin-top: -5px;
+                    margin-left: 5px;
+                    border-radius: 50%;
+                }
+            }
+        }
+    }
+}
+
+//file upload
+.file-upload {
+    @include placeholder($primary);
+    @include text(15px, 40px, $primary);
+    padding: $input-padding-y $input-padding-x;
+    width: rem(203px);
+    line-height: $input-line-height;
+    border: rem(2px) solid $primary;
+    border-radius: rem(6px);
+    text-align: center;
+
+    @include media-breakpoint-up(md) {
+        width: rem(230px);
+    }
+
+    @include media-breakpoint-up(lg) {
+        width: rem(280px);
+    }
+
+    svg {
+        margin-right: rem(10px);
+    }
+
+    &:focus {
+        outline: 0;
+    }
+}
+
+//input row
+.input {
+    &-row {
+        width: 100%;
+    }
+
+    &-wrap {
+        position: relative;
+        padding-right: rem(38px);
+    }
+
+    &-col {
+        @include media(1024px, 1699.98px) {
+            text-align: left;
+            flex-flow: row wrap;
+            // flex: 1;
+        }
+
+        &--right {
+            padding-left: rem(10px);
+        }
+    }
+}

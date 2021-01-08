@@ -1,0 +1,703 @@
+%ege-carousel {
+    @include media-breakpoint-down(sm) {
+        margin-right: -21px;
+    }
+}
+
+%ege-pagination {
+    @include media-breakpoint-down(sm) {
+        margin-left: -21px;
+    }
+}
+
+.industries {
+    padding: rem(60px 0);
+    overflow: hidden;
+    background: url(../images/pettern.png) repeat;
+
+    @include media-breakpoint-up(md) {
+        padding-top: rem(40px);
+        padding-bottom: rem(40px);
+    }
+
+    &__carousel {
+        position: relative;
+
+        @include media-breakpoint-up(md) {
+            margin-left: rem(-7.5px);
+            margin-right: rem(-7.5px);
+        }
+
+        @include media-breakpoint-up(lg) {
+            margin-left: rem(-15px);
+            margin-right: rem(-15px);
+        }
+
+        &::after {
+            position: absolute;
+            bottom: 0;
+            left: -1000%;
+            right: -1000%;
+            height: 200%;
+            background: #f0f0f0;
+            content: '';
+            z-index: -1;
+            mix-blend-mode: multiply;
+            top: -150%;
+        }
+
+        .col-md-3 {
+
+            @include media-breakpoint-up(md) {
+                padding: rem(7.5px);
+            }
+
+            @include media-breakpoint-up(lg) {
+                padding: rem(15px);
+            }
+
+            @include media-breakpoint-down(sm) {
+                &:not(:last-child) {
+                    margin-bottom: rem(15px);
+                }
+            }
+        }
+    }
+
+    .swiper-slide {
+        height: auto;
+    }
+
+    &__item {
+        background-color: $white;
+        box-shadow: rem(0 4px 4px) rgba(0, 0, 0, 0.15);
+        border-radius: rem(5px);
+        overflow: hidden;
+    }
+
+    &__img {
+        img {
+            width: 100%;
+        }
+    }
+
+    &__caption {
+        padding: rem(10px 6px);
+        height: rem(58px);
+        text-align: center;
+        line-height: 1.1875;
+        font-weight: 700;
+        background-color: $white;
+        overflow: hidden;
+
+        @include media-breakpoint-only(md) {
+            @include text(rem(12px), 1.17);
+            padding: rem(12px 4px);
+        }
+
+        span {
+            max-height: 38px;
+            display: block;
+            overflow: hidden;
+        }
+    }
+
+    .controller {
+        @include media-breakpoint-down(lg) {
+            display: none;
+        }
+    }
+
+    &__pagination {
+        @extend %ege-pagination;
+    }
+}
+
+
+.connected {
+    $self : #{&};
+    padding: rem(60px 0);
+
+    @include media-breakpoint-up(md) {
+        padding-top: rem(60px);
+        padding-bottom: rem(40px);
+    }
+
+    &__row {
+        @include media-breakpoint-down(sm) {
+            width: 100%;
+        }
+    }
+
+    &__img,
+    &__content {
+        width: 100%;
+
+        @include media-breakpoint-up(md) {
+            width: 50%;
+        }
+    }
+
+    &__item {
+        width: 100%;
+        margin-top: rem(30px);
+
+        @include media-breakpoint-up(md) {
+            margin-top: 0;
+            width: 50%;
+        }
+    }
+
+    &__content {
+        padding: rem(20px 15px 25px);
+        background-color: $gray-500;
+
+        @include media-breakpoint-only(md) {
+            padding: rem(15px 13px);
+        }
+    }
+
+    &__title {
+        position: relative;
+
+        @include media-breakpoint-up(lg) {
+            padding-right: rem(84px);
+        }
+
+        h5 {
+            font-size: 1rem;
+            line-height: 1.36;
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+
+        h6 {
+            @include text(rem(14px), 1.36, null, 400);
+        }
+    }
+
+    &__rating {
+        display: inline-block;
+        font-size: 0;
+        line-height: 0;
+        width: rem(84px);
+
+        @include media-breakpoint-up(lg) {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        &-icon {
+            width: rem(14px);
+            height: rem(14px);
+        }
+    }
+
+    &__logo {
+        margin-top: rem(10px)
+    }
+
+    &__desc {
+        margin-top: rem(12px)
+    }
+
+    &__country {
+        @include text(rem(14px), 1.14);
+        margin-top: rem(30px);
+
+        img {
+            margin-right: rem(10px);
+
+            @include media-breakpoint-only(md) {
+                margin-right: rem(6px);
+            }
+        }
+
+        a {
+            text-transform: uppercase;
+            font-weight: 700;
+
+            i {
+                margin-left: rem(10px);
+            }
+        }
+    }
+
+    .link {
+        svg {
+            margin-left: rem(10px);
+            vertical-align: 0;
+        }
+    }
+
+    &__row:nth-child(even) {
+        #{$self}__item {
+            #{$self}__img {
+                @include media-breakpoint-up(md) {
+                    order: 2;
+                }
+            }
+
+            #{$self}__content {
+                @include media-breakpoint-up(md) {
+                    order: 1;
+                }
+            }
+        }
+    }
+
+    &__pagination {
+        @extend %ege-pagination;
+    }
+}
+
+//how-it-work
+.how-it-work {
+    padding: rem(60px 0);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+
+    @include media-breakpoint-up(md) {
+        padding-top: rem(40px);
+        padding-bottom: rem(45px);
+    }
+
+    @include media-breakpoint-up(lg) {
+        padding-top: rem(60px);
+        padding-bottom: rem(100px);
+    }
+
+    &__content {
+        padding-left: rem(32px);
+        line-height: 1.5;
+        text-align: left;
+
+        @include media-breakpoint-up(md) {
+            text-align: center;
+            padding-left: 0;
+            padding-top: rem(20px);
+        }
+
+        @include media-breakpoint-up(lg) {
+            padding-top: rem(30px);
+        }
+    }
+
+    &__steps {
+
+        .row {
+            margin-left: -7.5px;
+            margin-right: -7.5px;
+        }
+
+        .col-12 {
+            padding-left: 7.5px;
+            padding-right: 7.5px;
+
+            &:not(:last-child) {
+                @include media-breakpoint-down(sm) {
+                    margin-bottom: rem(30px);
+                }
+
+            }
+
+        }
+    }
+
+    &__step {
+        position: relative;
+        z-index: 1;
+        text-align: center;
+
+        &::after {
+            @include media-breakpoint-up(md) {
+                position: absolute;
+                top: rem(44px);
+                left: 50%;
+                width: 100%;
+                height: rem(1px);
+                background: url(../images/line.png) repeat-x center center/cover;
+                content: '';
+                z-index: -1;
+            }
+
+            @include media-breakpoint-up(lg) {
+                top: rem(70px);
+            }
+
+            .how-it-work .col-12:last-child & {
+                display: none;
+            }
+        }
+
+        &_icon {
+            padding: rem(15px);
+            width: rem(70px);
+            height: rem(70px);
+            border-radius: 50%;
+            background-color: $blue;
+            border: rem(5px) solid $blue-800;
+            box-shadow: rem(0 4px 14px) rgba($black, 0.35);
+
+            @include media(340px) {
+                width: rem(90px);
+                height: rem(90px);
+            }
+
+            @include media-breakpoint-only(md) {
+                width: rem(88px);
+                height: rem(88px);
+            }
+
+            @include media-breakpoint-up(lg) {
+                margin: auto;
+                width: rem(135px);
+                height: rem(135px);
+            }
+        }
+    }
+
+    %howcontent {
+        @include text(rem(14px), 1.5, null, 900);
+
+        @include media-breakpoint-only(md) {
+            @include text(rem(12px), 1.5);
+        }
+
+        @include media-breakpoint-up(lg) {
+            font-size: inherit;
+            line-height: inherit;
+        }
+    }
+
+    &__count {
+        @extend %howcontent;
+        margin-bottom: rem(5px);
+        color: $white;
+
+        @include media-breakpoint-up(md) {
+            display: block;
+        }
+    }
+
+    &__title {
+        @extend %howcontent;
+        text-transform: uppercase;
+
+        span:not(.how-it-work__count) {
+            display: block;
+            font-weight: 400;
+            color: $white;
+            text-transform: lowercase;
+
+            @include media-breakpoint-up(md) {
+                display: inline-block;
+            }
+        }
+    }
+}
+
+
+//join
+.join {
+    padding: rem(60px 0);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    @include media-breakpoint-up(md) {
+        padding-top: rem(40px);
+        padding-bottom: rem(44px);
+    }
+
+    &__content {
+        @include media-breakpoint-down(sm) {
+            margin-left: -21px;
+            margin-right: -21px;
+        }
+    }
+
+    &-row:not(&--header) {
+        @include media-breakpoint-up(md) {
+            margin-bottom: rem(20px);
+        }
+    }
+
+    .swiper-container {
+        @include media-breakpoint-up(md) {
+            overflow: visible;
+        }
+    }
+
+    .swiper-wrapper {
+        @include media-breakpoint-up(md) {
+            flex-wrap: wrap;
+            transform: translate3d(0, 0, 0) !important;
+            height: auto !important;
+        }
+
+        @include media-breakpoint-down(sm) {
+            padding: rem(20px 0);
+
+            .swiper-slide {
+                padding: 0 21px;
+            }
+        }
+    }
+
+    &-carousel {
+        .carousel-inner {
+            @include media-breakpoint-up(md) {
+                overflow: visible;
+            }
+
+            @include media-breakpoint-down(sm) {
+                padding: rem(20px 0);
+            }
+        }
+
+        .carousel-item {
+            @include media-breakpoint-up(md) {
+                display: block;
+                margin-right: 0;
+            }
+
+            @include media-breakpoint-down(sm) {
+                padding: rem(0 21px);
+            }
+        }
+    }
+
+    &__item {
+        position: relative;
+        width: 100%;
+        background-size: 35px;
+        background-repeat: no-repeat;
+        border-radius: rem(10px);
+
+        &:not(&--heading) {
+            background-color: $white;
+            ;
+        }
+
+        @include media-breakpoint-up(md) {
+            width: 38.91891891891892%;
+        }
+
+        h2 {
+            text-transform: uppercase;
+        }
+
+        &:not(.join__item--heading) {
+            padding: rem(22px);
+            box-shadow: rem(0 4px 14px) rgba($black, 0.25);
+
+            &::after {
+                position: absolute;
+                left: 50%;
+                bottom: rem(-18px);
+                margin-left: rem(-12.5px);
+                width: rem(25px);
+                height: rem(18px);
+                content: '';
+                background-image: url(../svgs/join-arrow-down.svg);
+                background-repeat: no-repeat;
+
+                @include media-breakpoint-up(md) {
+                    top: 50%;
+                    left: auto;
+                    right: rem(-10px);
+                    bottom: auto;
+                    margin-top: rem(-9px);
+                    margin-left: auto;
+                    width: rem(13px);
+                    height: rem(18px);
+                    background-size: 13px 18px;
+                    background-image: url(../svgs/join-arrow.svg);
+                }
+
+                @include media-breakpoint-up(lg) {
+                    right: rem(-13px);
+                }
+            }
+        }
+
+        &--heading {
+            text-align: center;
+        }
+
+        &--left {
+            @include media-breakpoint-down(sm) {
+                padding: rem(19px 19px 64px) !important;
+                background-image: url(../svgs/angle-down.svg);
+                background-position: center bottom rem(19px);
+            }
+
+
+            @include media-breakpoint-up(md) {
+                padding-right: rem(46px) !important;
+                background-size: 24px;
+                background-image: url(../svgs/angle-right.svg);
+                background-position: right rem(12px) center;
+            }
+
+            @include media-breakpoint-up(lg) {
+                padding-right: rem(76px) !important;
+                background-position: right rem(27px) center;
+                background-size: 34px;
+            }
+        }
+
+        &--right {
+            @include media-breakpoint-down(sm) {
+                padding: rem(64px 19px 19px) !important;
+                background-image: url(../svgs/angle-up.svg);
+                background-position: center top rem(19px);
+            }
+
+            @include media-breakpoint-up(md) {
+                padding-left: rem(46px) !important;
+                background-size: 24px;
+                background-position: left rem(12px) center;
+                background-image: url(../svgs/angle-left.svg);
+            }
+
+            @include media-breakpoint-up(lg) {
+                padding-left: rem(76px) !important;
+                background-size: 34px;
+                background-position: left rem(27px) center;
+            }
+
+            &::after {
+                @include media-breakpoint-down(sm) {
+                    top: rem(-18px);
+                    bottom: auto;
+                    transform: rotate(-180deg) !important;
+                }
+
+                @include media-breakpoint-up(md) {
+                    right: auto !important;
+                    left: rem(-10px) !important;
+                    transform: rotate(180deg);
+                }
+
+                @include media-breakpoint-up(lg) {
+                    left: rem(-13px) !important;
+                }
+            }
+        }
+    }
+
+    &__title {
+        @include media-breakpoint-down(sm) {
+            margin: rem(68px 0);
+            width: 100%;
+            text-align: center;
+        }
+
+        @include media-breakpoint-up(md) {
+            width: auto;
+        }
+
+        h2 {
+            @include media-breakpoint-only(md) {
+                @include text(rem(14px), 1.15);
+            }
+        }
+    }
+
+}
+
+
+.machinery-marketplace {
+    padding: rem(60px 0 70px);
+
+    @include media-breakpoint-up(md) {
+        padding: rem(40px 0 94px);
+    }
+
+    @include media-breakpoint-up(lg) {
+        padding-top: rem(40px);
+        padding-bottom: rem(40px);
+    }
+
+    &__img {
+        margin-top: rem(-6px);
+        max-width: 160px;
+
+        figcaption {
+            padding-top: rem(10px);
+            text-align: center;
+
+            @include media-breakpoint-down(sm) {
+                display: none;
+            }
+        }
+    }
+
+    &__content {
+        position: relative;
+        padding: rem(88px 21px 44px 21px);
+        margin-top: rem(40px);
+        border-radius: rem(10px);
+        background-color: #EEEEEE;
+        box-shadow: rem(0 2px 0) rgba($black, 0.25);
+
+        @include media-breakpoint-only(md) {
+            @include text(rem(16px), 1.25);
+        }
+
+        @include media-breakpoint-up(md) {
+            padding: rem(85px 21px 40px 29px);
+        }
+
+        @include media-breakpoint-up(lg) {
+            padding: rem(38px 12px 19px 81px);
+            margin-top: rem(0);
+        }
+
+        &::after,
+        &::before {
+            position: absolute;
+            content: '';
+        }
+
+        &::before {
+            top: rem(32px);
+            left: rem(20px);
+            width: rem(46px);
+            height: rem(32.52px);
+            background: url(../svgs/qoute.svg) no-repeat center/contain;
+
+            @include media-breakpoint-up(md) {
+                top: rem(35px);
+            }
+
+            @include media-breakpoint-up(lg) {
+                top: rem(25px);
+            }
+        }
+
+        &::after {
+            top: rem(-18px);
+            left: 50%;
+            transform: translateX(-50%);
+            width: rem(25px);
+            height: rem(18px);
+            background-color: inherit;
+            background: url(../svgs/digitize.svg) no-repeat center/contain;
+
+            @include media-breakpoint-up(lg) {
+                top: rem(29px);
+                left: rem(-8px);
+                width: rem(18px);
+                height: rem(24px);
+                background: url(../svgs/digitize-left.svg) no-repeat center/18px 24px;
+            }
+
+
+        }
+    }
+}
